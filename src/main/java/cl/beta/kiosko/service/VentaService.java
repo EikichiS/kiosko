@@ -10,5 +10,4 @@ public interface VentaService {
 
     public List<Venta> listar();
 
-    public List<Venta> listarPorProducto(String id);
 }

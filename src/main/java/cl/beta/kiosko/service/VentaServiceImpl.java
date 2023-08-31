@@ -23,8 +23,4 @@ public class VentaServiceImpl implements VentaService {
         return ventaRepository.findAll();
     }
 
-    @Override
-    public List<Venta> listarPorProducto(String id) {
-        return ventaRepository.findAllByIdProducto(id);
-    }
 }

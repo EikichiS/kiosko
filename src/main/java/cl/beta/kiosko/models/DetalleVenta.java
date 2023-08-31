@@ -6,15 +6,21 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document("ventas")
-public class Venta {
-
+@Document("detalleVenta")
+public class DetalleVenta {
     @Id
     private String id;
+    @DBRef
+    private Venta venta;
+    @DBRef
+    private Producto producto;
 
-    private int total;
+    private int cantidad;
 
-    private String fecha;
+    private int subtotal;
 
+    private String medioPago;
+
+    private String estado;
 
 }

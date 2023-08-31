@@ -16,17 +16,17 @@ public class ProductoController {
     @Autowired
     private ProductoService productoService;
 
-    @PostMapping("/crear")
+    @PostMapping
     public ResponseEntity<Producto> crear(@RequestBody Producto producto){
         return ResponseEntity.ok(productoService.crear(producto));
     }
 
-    @GetMapping("/listar")
+    @GetMapping
     public ResponseEntity<List<Producto>> listar(){
         return ResponseEntity.ok(productoService.listar());
     }
 
-    @GetMapping("/listar/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Optional<Producto>> listarPorProducto(@PathVariable(name = "id", required = true) String id){
         return ResponseEntity.ok(productoService.listarPorProducto(id));
     }

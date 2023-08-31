@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface VentaRepository extends MongoRepository<Venta,String> {
 
-    List<Venta> findAllByIdProducto(String productoId);
 }

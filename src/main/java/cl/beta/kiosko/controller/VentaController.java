@@ -15,18 +15,15 @@ public class VentaController {
     @Autowired
     private VentaService ventaService;
 
-    @PostMapping("/crear")
+    @PostMapping
     public ResponseEntity<Venta> crear(@RequestBody Venta venta){
         return ResponseEntity.ok(ventaService.crear(venta));
     }
 
-    @GetMapping("/listar")
+    @GetMapping
     public ResponseEntity<List<Venta>> listar(){
         return ResponseEntity.ok(ventaService.listar());
     }
 
-    @GetMapping("/listar/{id}")
-    public ResponseEntity<List<Venta>> listarPorProducto(@PathVariable(name = "id", required = true) String id){
-        return ResponseEntity.ok(ventaService.listarPorProducto(id));
-    }
+
 }

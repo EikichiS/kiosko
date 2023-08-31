@@ -5,16 +5,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 @Data
-@Document("ventas")
-public class Venta {
+@Document("inventario")
+public class Inventario {
 
     @Id
     private String id;
 
-    private int total;
+    @DBRef
+    private Producto producto;
 
-    private String fecha;
-
-
+    private int cantidad;
 }
